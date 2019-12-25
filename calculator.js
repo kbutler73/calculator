@@ -8,15 +8,15 @@ function add(a, b) {
     const numB = toNumber(b);
     if (typeof (numB) === 'string') {
         console.log(numB);
-        return 'ERROR';        
+        return 'ERROR';
     }
 
     return numA + numB;
 }
 
-function subtract(a, b){
+function subtract(a, b) {
     const numA = toNumber(a);
-    if(typeof(numA) === 'string'){
+    if (typeof (numA) === 'string') {
         console.log(numA);
         return 'ERROR'
     }
@@ -24,15 +24,15 @@ function subtract(a, b){
     const numB = toNumber(b);
     if (typeof (numB) === 'string') {
         console.log(numB);
-        return 'ERROR';        
+        return 'ERROR';
     }
 
     return numA - numB;
 }
 
-function multiply(a, b){
+function multiply(a, b) {
     const numA = toNumber(a);
-    if(typeof(numA) === 'string'){
+    if (typeof (numA) === 'string') {
         console.log(numA);
         return 'ERROR'
     }
@@ -40,17 +40,17 @@ function multiply(a, b){
     const numB = toNumber(b);
     if (typeof (numB) === 'string') {
         console.log(numB);
-        return 'ERROR';        
+        return 'ERROR';
     }
 
     return numA * numB;
 }
 
-function divide(a, b){
-    if(b === 0) return 'DIVIDE BY 0';
+function divide(a, b) {
+    if (b === 0) return 'DIVIDE BY 0';
 
     const numA = toNumber(a);
-    if(typeof(numA) === 'string'){
+    if (typeof (numA) === 'string') {
         console.log(numA);
         return 'ERROR'
     }
@@ -58,7 +58,7 @@ function divide(a, b){
     const numB = toNumber(b);
     if (typeof (numB) === 'string') {
         console.log(numB);
-        return 'ERROR';        
+        return 'ERROR';
     }
 
     return numA / numB;
@@ -91,6 +91,25 @@ function toNumber(a) {
     return a;
 }
 
+function operate(operator, a, b) {
+    switch (operator) {
+        case '+':
+            return add(a, b);
+            break;
+        case '-':
+            return subtract(a, b);
+            break;
+        case '*':
+            return multiply(a, b);
+            break;
+        case '/':
+            return divide(a, b);
+            break;
+        default:
+            return 'ERROR';
+    }
+}
+
 console.log('result is ' + add('x' + 'y'));
 console.log('result is ' + add('x', 'y'));
 console.log('result is ' + add('1', '1'));
@@ -102,38 +121,50 @@ console.log('result is ' + add('1', '2.3'));
 console.log('result is ' + add(1, '2.3'));
 
 testSubtract('x');
-testSubtract('x','y');
+testSubtract('x', 'y');
 testSubtract('3', '2');
-testSubtract(3,2);
+testSubtract(3, 2);
 testSubtract(4.3, 2.1);
 
-function testSubtract(a, b){
+function testSubtract(a, b) {
     console.log('');
     console.log(`Subtract ${a}, ${b}`);
     console.log(`${a} - ${b} = ${subtract(a, b)}`)
 }
 
 testMultiply('x');
-testMultiply('x','y');
+testMultiply('x', 'y');
 testMultiply('3', '2');
-testMultiply(3,2);
+testMultiply(3, 2);
 testMultiply(4.3, 2.1);
 
-function testMultiply(a, b){
+function testMultiply(a, b) {
     console.log('');
     console.log(`Multiply ${a}, ${b}`);
     console.log(`${a} * ${b} = ${multiply(a, b)}`)
 }
 
 testDivide('x');
-testDivide('x','y');
+testDivide('x', 'y');
 testDivide('3', '2');
-testDivide(3,2);
+testDivide(3, 2);
 testDivide(4.3, 2.1);
 testDivide(4.3, 0);
 
-function testDivide(a, b){
+function testDivide(a, b) {
     console.log('');
     console.log(`Divide ${a}, ${b}`);
     console.log(`${a} / ${b} = ${divide(a, b)}`)
+}
+
+testOperate('+', 4, 5);
+testOperate('-', 8, 3);
+testOperate('*', 8, 3);
+testOperate('/', 8, 3);
+testOperate('/', 8, 0);
+
+function testOperate(operator, a, b) {
+    console.log("");
+    console.log(`${a} ${operator} ${b}`);
+    console.log(`${a} ${operator} ${b} = ${operate(operator, a, b)}`);
 }
