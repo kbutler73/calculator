@@ -1,0 +1,65 @@
+html {
+    background-color: #272727;
+}
+
+#result {
+    width: 420px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 36pt;
+    font-weight: bolder;
+    background-color: darkslategray;
+    text-align: right;
+    padding: 10px;
+    padding-right: 20px;
+    border-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 3px;
+    color: white;
+}
+
+#grid {
+    margin: 100px;
+    margin-top: 30px;
+}
+
+.key {
+    border-color: black;
+    color: white;
+}
+
+.number-key {
+    background-color: #2f454f;
+}
+
+.function-key {
+    background-color: #000054;
+}
+
+#clear-key {
+    background-color: #670000;
+}
+
+#equal-key {
+    background-color: #006700;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container>div {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.flex-container>button {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    font-size: 36pt;
+    font-weight: bolder;
+}

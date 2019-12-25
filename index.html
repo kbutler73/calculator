@@ -7,8 +7,39 @@
 </head>
 
 <body>
-    <div id='grid'></div>
-    <button id='new-grid-button'>New Grid</button>
+    <div id='grid'>
+        <input id='result' value="01234" type="text">
+        <div class='flex-container'>
+            <button class="key" id="clear-key">C</button>
+            <div></div>
+            <div></div>
+            <button class="function-key key">/</button>
+        </div>
+        <div class='flex-container'>
+            <button class="number-key key">7</button>
+            <button class="number-key key">8</button>
+            <button class="number-key key">9</button>
+            <button class='function-key key'>X</button>
+        </div>
+        <div class='flex-container'>
+            <button class="number-key key">4</button>
+            <button class="number-key key">5</button>
+            <button class="number-key key">6</button>
+            <button class="function-key key">-</button>
+        </div>
+        <div class='flex-container'>
+            <button class="number-key key">1</button>
+            <button class="number-key key">2</button>
+            <button class="number-key key">3</button>
+            <button class="function-key key">+</button>
+        </div>
+        <div class='flex-container'>
+            <button class="number-key key">+/-</button>
+            <button class="number-key key">0</button>
+            <button class="number-key key">.</button>
+            <button class='key' id="equal-key">=</button>
+        </div>
+    </div>
     <script type="text/javascript" src="calculator.js"></script>
 </body>
 
